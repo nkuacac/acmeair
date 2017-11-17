@@ -1,13 +1,22 @@
-﻿APPLICATION_ID: acmeair
+APPLICATION_ID: acmeair
 service_description:
   name: bookingServiceApp
   version: 0.0.1
 cse:
   service:
     registry:
-      address: http://127.0.0.1:30100
-  rest:
-    address: 0.0.0.0:7003
+      address: https://100.125.0.198:30100
+      instance:
+        watch: false
+  config:
+    client:
+      serverUri: https://100.125.0.198:30103
+      refreshMode: 1
+      refresh_interval: 5000
+  monitor:
+    client:
+      serverUri: https://100.125.0.198:30109
+    
   handler:
     chain:
       Consumer:
